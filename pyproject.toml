@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "find-my-roomie"
+version = "0.1.0"
+description = ""
+authors = ["fatiudeen <shehufatiudeen@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "app"}, {include = "scripts"}]
+
+[tool.poetry.scripts]                                                           
+start = "scripts.start:start"
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.85.2"
+uvicorn = {extras = ["standard"], version = "^0.19.0"}
+SQLAlchemy = "^1.4.42"
+python-dotenv = "^0.21.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

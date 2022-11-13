@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+
+  postgres:
+    image: postgres
+    container_name: test_postgres
+    ports:
+      - '5432:5432'
+    restart: 'unless-stopped'
+    env_file:
+      - .env
+    networks:
+      - backend
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: deen1234
+      POSTGRES_DB: test
+      POSTGRES_PORT: '5432'
+      POSTGRES_HOST: localhost
+
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  data:
+    driver: local
